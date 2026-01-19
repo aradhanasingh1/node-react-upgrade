@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src/**/*", "pages/**/*"],
+  "exclude": ["node_modules", "dist", ".next", "src/App-old.tsx", "src/components/ServiceDashboard.tsx", "src/components/SimpleDashboard.tsx", "src/components/IntegratedDashboard.tsx", "src/components/EnhancedDashboard.tsx", "src/components/PlaceholderComponents.tsx", "src/components/TwilioServiceComponent.tsx", "src/components/SoapServiceComponent.tsx", "src/components/StripeServiceComponent.tsx", "src/components/SalesforceServiceComponent.tsx", "src/components/AwsServiceComponent.tsx"]
+}
