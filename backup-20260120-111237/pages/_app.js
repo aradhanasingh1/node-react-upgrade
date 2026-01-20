@@ -21,13 +21,13 @@ import {
   ListItemText,
   ListItemIcon,
   Paper
-} from '@mui/material';
+} from '@material-ui/core';
 import {
   Menu,
   Dashboard,
   Settings,
   Palette
-} from '@mui/icons-material';
+} from '@material-ui/icons';
 
 class MyApp extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class MyApp extends Component {
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}
               style={{ marginRight: 20, color: 'white' }}
-              size="large">
+            >
               <Menu />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
@@ -73,6 +73,7 @@ class MyApp extends Component {
             </Typography>
           </Toolbar>
         </AppBar>
+
         <Drawer
           variant="temporary"
           anchor="left"
@@ -96,6 +97,7 @@ class MyApp extends Component {
             </List>
           </div>
         </Drawer>
+
         <main style={{ flexGrow: 1, backgroundColor: '#f5f5f5', padding: '0px', minHeight: '100vh' }}>
           <div style={{ padding: '20px' }}>
             <Component {...pageProps} />

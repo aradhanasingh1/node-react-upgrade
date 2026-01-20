@@ -227,3 +227,75 @@ AWS_REGION=us-east-1
 ## License
 
 Proprietary - TalentScreen
+
+
+Notes- 
+
+upgraded node versions 14 to 16 to 18.
+on node 18 upgrade react build broke and asked to get read of all mannual package configuration of bable and run npm cache clean --force , npm install , 
+sharp need to be upgraded to latest or 0.32.x and then jss also need to be upgraded 10.10.x
+join-images@1.1.5
+requires sharp ^0.32.0
+
+2️⃣ jss-rtl@0.3.0
+requires jss ^10.0.0
+
+
+But your project still has:
+
+jss ^9.8.7   ❌
+so npm uninstall sharp join-images jss
+ and then 
+ npm install \
+sharp@0.32.6 \
+join-images@1.1.5 \
+jss@^10.10.0
+
+
+Material ui error - solution for node upgrade -
+npm uninstall material-ui-pickers
+npm install @material-ui/core @mui/x-date-pickers @emotion/react @emotion/styled
+@mui/x-date-pickers is the official replacement
+and update the imports to -
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+
+so for material upgrade asked to upgrade next redux wrapper to - npm install next-redux-wrapper@4.0.0
+
+
+ou need to use an older Next.js version, as current versions (like Next.js 16) require Node 20.9+ and React 18/19+, but you might find compatibility with Next.js 13 or 14 with Node 18 and React 16, though it won't get newer features like Fast Refresh; consider upgrading Node and React if possible for better support, but Next.js 12 supported React 18 (and likely older versions with features missing), while Next.js 13/14 are better bets for Node 18 & React 16, with Next.js 12 being a strong candidate to bridge React 16 with a slightly older Node version before the Node 20 requirement kicked in for newer versions. 
+
+npm i next@13 eslint-config-next@13
+
+Redux -
+
+For Next.js 13+, especially when using the new App Router, the next-redux-wrapper library is generally no longer the recommended approach for integrating Redux. Instead, you should install react-redux and @reduxjs/toolkit, and manage the Redux store using a client-side provider. 
+npm install @reduxjs/toolkit react-redux
+and to install redux as above you need to first remove/uninstall 
+material, chartist@, 
+
+eslint version - 8.0.0
+eslint-plugin-etc : 2.0.3
+
+very first remove below -
+
+"react-scripts"
+"@babel/preset-typescript"
+"babel-plugin-transform-*"
+"@zeit/next-typescript"
+"uglifyjs-webpack-plugin"
+"worker-loader"
+"styled-jsx@2.x"
+
+
+
+npm install @tinymce/tinymce-react@^5.1.0
+
+
+codemod command to update material ui code differences after upgrade
+
+npx @mui/codemod v5.0.0/material-ui src/ pages/
+if error then - npx @mui/codemod v5.0.0/preset-safe src/ pages/
+
+update tinimce version to - "@tinymce/tinymce-react": "^5.1.0"
