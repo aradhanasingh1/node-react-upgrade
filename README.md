@@ -297,5 +297,6 @@ codemod command to update material ui code differences after upgrade
 
 npx @mui/codemod v5.0.0/material-ui src/ pages/
 if error then - npx @mui/codemod v5.0.0/preset-safe src/ pages/
+typescript -5
 
 update tinimce version to - "@tinymce/tinymce-react": "^5.1.0"

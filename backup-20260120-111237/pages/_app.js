@@ -1,15 +1,4 @@
 import React, { Component } from 'react';
-
-// Suppress Material-UI deprecation warnings
-console.error = (() => {
-  const originalError = console.error;
-  return function(...args) {
-    if (args[0] && args[0].includes && args[0].includes('componentWillMount')) {
-      return; // Suppress Material-UI componentWillMount warnings
-    }
-    return originalError.apply(console, args);
-  };
-})();
 import {
   AppBar,
   Toolbar,
@@ -28,6 +17,17 @@ import {
   Settings,
   Palette
 } from '@material-ui/icons';
+// Suppress Material-UI deprecation warnings
+console.error = (() => {
+  const originalError = console.error;
+  return function(...args) {
+    if (args[0] && args[0].includes && args[0].includes('componentWillMount')) {
+      return; // Suppress Material-UI componentWillMount warnings
+    }
+    return originalError.apply(console, args);
+  };
+})();
+
 
 class MyApp extends Component {
   constructor(props) {
