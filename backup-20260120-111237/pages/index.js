@@ -4,7 +4,7 @@ import {
   Paper,
   Grid,
   Typography
-} from '@mui/material';
+} from '@material-ui/core';
 
 class Home extends Component {
   render() {
